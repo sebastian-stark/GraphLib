@@ -13,3 +13,5 @@ Installation of the library is through cmake:
 (7) optionally set an environment variable to GRAPH_LIB_DIR=/path/to/install/dir
 
 The library GraphLib requires libosmium >=2.15.4 and ZLIB >=1.2.11 installed in paths where they can be found by cmake. These libraries can e.g. be installed through a package manager.
+
+The doxygen generated documentation of GraphLib can be found in the doc folder.
