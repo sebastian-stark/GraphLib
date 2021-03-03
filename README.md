@@ -4,7 +4,7 @@ This is a toy library providing functionality for storing OSM maps as graphs, fo
 
 Installation of the library is through cmake:
 
-(1) place library source files into some folder /path/to/folder/GraphLib (you can use e.g. git clone https://github.com/sebastian-stark/GraphLib.git for this)
+(1) place library source files into some folder /path/to/folder/GraphLib (you can use e.g. git clone https://github.com/sebastian-stark/GraphLib.git from folder /path/to/folder for this)
 (2) cd /path/to/folder/
 (3) mkdir build
 (4) cd build
