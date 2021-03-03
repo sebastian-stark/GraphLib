@@ -1,0 +1,12 @@
+# add new tests to this list
+LIST(APPEND TESTS test_example_00)
+
+FOREACH(TEST ${TESTS})
+  ADD_EXECUTABLE(${TEST} ${TEST}.cc)
+  ADD_TEST(${TEST} ${TEST})
+  TARGET_LINK_LIBRARIES(${TEST} ${GRAPH_LIB_LIBRARIES})
+  CONFIGURE_FILE(${CMAKE_SOURCE_DIR}/tests/${TEST}.log ${PROJECT_BINARY_DIR}/tests/${TEST}.log COPYONLY)
+ENDFOREACH(TEST)
+
+CONFIGURE_FILE(${CMAKE_SOURCE_DIR}/tests/example_map.osm.pbf ${PROJECT_BINARY_DIR}/tests/example_map.osm.pbf COPYONLY)
+
