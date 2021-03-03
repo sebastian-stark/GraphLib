@@ -317,10 +317,10 @@ namespace GraphLib
 	}
 
 	void
-	Graph::write_svg(	const string file_name,
-						const function<coordinate_t(const coordinate_t&)>& coordinate_transform,
-						const bool highlight_flagged_edges,
-						const double width)
+	Graph::write_svg(	ofstream&											output_stream,
+						const function<coordinate_t(const coordinate_t&)>&	coordinate_transform,
+						const bool 											highlight_flagged_edges,
+						const double										width)
 	const
 	{
 		// first pass: figure out the "dimensions" of the graph to be written
@@ -346,8 +346,6 @@ namespace GraphLib
 		}
 
 		// second pass: write the svg
-		ofstream svg_file;
-		svg_file.open(file_name.c_str());
 		const double offset_x = -x_min;
 		const double offset_y = -y_min;
 
@@ -372,8 +370,8 @@ namespace GraphLib
 			return res;
 		};
 
-		svg_file << prop_str( "svg", { {"width", to_string(width) + "px"}, {"height", to_string(height) + "px"} }) << endl;
-		svg_file << prop_str( "rect", { {"x", "0"}, {"y", "0"}, {"width", to_string(width)}, {"height", to_string(height)}, {"fill", "white"} }, "/") << endl;
+		output_stream << prop_str( "svg", { {"width", to_string(width) + "px"}, {"height", to_string(height) + "px"} }) << endl;
+		output_stream << prop_str( "rect", { {"x", "0"}, {"y", "0"}, {"width", to_string(width)}, {"height", to_string(height)}, {"fill", "white"} }, "/") << endl;
 		string postponed_edges = "";
 		for(const auto& edge : edges)
 		{
@@ -388,13 +386,25 @@ namespace GraphLib
 			if(edge.get_user_flag())
 				postponed_edges += prop_str( "polyline", { {"points", points}, {"fill", "none"}, {"stroke", color}, {"stroke-width", "2"} }, "/") + "\n";
 			else
-				svg_file << prop_str( "polyline", { {"points", points}, {"fill", "none"}, {"stroke", color} }, "/") << endl;
+				output_stream << prop_str( "polyline", { {"points", points}, {"fill", "none"}, {"stroke", color} }, "/") << endl;
 		}
-		svg_file << postponed_edges;
-		svg_file << "</svg>" << endl;
-		svg_file.close();
+		output_stream << postponed_edges;
+		output_stream << "</svg>" << endl;
 
 		return;
+	}
+
+	void
+	Graph::write_svg(	const string 										file_name,
+						const function<coordinate_t(const coordinate_t&)>&	coordinate_transform,
+						const bool 											highlight_flagged_edges,
+						const double										 width)
+	const
+	{
+		ofstream svg_file;
+		svg_file.open(file_name.c_str());
+		write_svg(svg_file, coordinate_transform, highlight_flagged_edges, width);
+		svg_file.close();
 	}
 
 	void

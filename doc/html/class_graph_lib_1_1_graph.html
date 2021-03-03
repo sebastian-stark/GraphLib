@@ -93,6 +93,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac619f84a3fe16cd25b4e5279d215cfd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af10505c386680bdb79efa0dc5b0f7f5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph_lib_1_1_graph.html#af10505c386680bdb79efa0dc5b0f7f5d">write_svg</a> (const std::string file_name, const std::function&lt; <a class="el" href="namespace_graph_lib.html#aedce1a218e8997c889ed4a2e30ba23a9">coordinate_t</a>(const <a class="el" href="namespace_graph_lib.html#aedce1a218e8997c889ed4a2e30ba23a9">coordinate_t</a> &amp;)&gt; &amp;coordinate_transform=[](const <a class="el" href="namespace_graph_lib.html#aedce1a218e8997c889ed4a2e30ba23a9">coordinate_t</a> &amp;p) -&gt; <a class="el" href="namespace_graph_lib.html#aedce1a218e8997c889ed4a2e30ba23a9">coordinate_t</a>{return p;}, const bool highlight_flagged_edges=false, const double width=1000.0) const</td></tr>
 <tr class="separator:af10505c386680bdb79efa0dc5b0f7f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e0a6b6d4e209e615836f4df3fe8325"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph_lib_1_1_graph.html#ab0e0a6b6d4e209e615836f4df3fe8325">write_svg</a> (std::ofstream &amp;output_stream, const std::function&lt; <a class="el" href="namespace_graph_lib.html#aedce1a218e8997c889ed4a2e30ba23a9">coordinate_t</a>(const <a class="el" href="namespace_graph_lib.html#aedce1a218e8997c889ed4a2e30ba23a9">coordinate_t</a> &amp;)&gt; &amp;coordinate_transform=[](const <a class="el" href="namespace_graph_lib.html#aedce1a218e8997c889ed4a2e30ba23a9">coordinate_t</a> &amp;p) -&gt; <a class="el" href="namespace_graph_lib.html#aedce1a218e8997c889ed4a2e30ba23a9">coordinate_t</a>{return p;}, const bool highlight_flagged_edges=false, const double width=1000.0) const</td></tr>
+<tr class="separator:ab0e0a6b6d4e209e615836f4df3fe8325"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accc2fe03dcb9ad88dd5dbee1d8fb17c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph_lib_1_1_graph.html#accc2fe03dcb9ad88dd5dbee1d8fb17c1">read_graph_from_osm</a> (const std::string file_name, const std::function&lt; bool(const osmium::Way &amp;)&gt; &amp;include_way, const std::function&lt; bool(const osmium::NodeRef &amp;)&gt; &amp;include_node, const bool remove_dead_ends=false)</td></tr>
 <tr class="separator:accc2fe03dcb9ad88dd5dbee1d8fb17c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accf1e69b32cd4644bc7291337be9d8a6"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::pair&lt; const <a class="el" href="class_graph_lib_1_1_edge.html">Edge</a> *, <a class="el" href="namespace_graph_lib.html#a5bf5516c3b23da8f7af1226afab50a5a">Direction</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph_lib_1_1_graph.html#accf1e69b32cd4644bc7291337be9d8a6">compute_shortest_path</a> (const <a class="el" href="namespace_graph_lib.html#a93d9cfaf86aae4dac4542492e675fec8">Node</a> node_1, const <a class="el" href="namespace_graph_lib.html#a93d9cfaf86aae4dac4542492e675fec8">Node</a> node_2) const</td></tr>
@@ -463,7 +465,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="af10505c386680bdb79efa0dc5b0f7f5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af10505c386680bdb79efa0dc5b0f7f5d">&#9670;&nbsp;</a></span>write_svg()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af10505c386680bdb79efa0dc5b0f7f5d">&#9670;&nbsp;</a></span>write_svg() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -503,6 +505,56 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">file_name</td><td>The file name of the svg file (including the extension)</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coordinate_transform</td><td>A transformation applied to the coordinates defining the geometry of the graph edges before writing the svg. If e.g. the coordinates of the graph edges represent longitude and latitude, this defines the projection to planar coordinates.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">highlight_flagged_edges</td><td>If <code>true</code>, flagged edges are drawn red</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>The width of the svg in px </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab0e0a6b6d4e209e615836f4df3fe8325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0e0a6b6d4e209e615836f4df3fe8325">&#9670;&nbsp;</a></span>write_svg() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphLib::Graph::write_svg </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>output_stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; <a class="el" href="namespace_graph_lib.html#aedce1a218e8997c889ed4a2e30ba23a9">coordinate_t</a>(const <a class="el" href="namespace_graph_lib.html#aedce1a218e8997c889ed4a2e30ba23a9">coordinate_t</a> &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>coordinate_transform</em> = <code>[](const&#160;<a class="el" href="namespace_graph_lib.html#aedce1a218e8997c889ed4a2e30ba23a9">coordinate_t</a>&#160;&amp;p)&#160;-&gt;&#160;<a class="el" href="namespace_graph_lib.html#aedce1a218e8997c889ed4a2e30ba23a9">coordinate_t</a>{return&#160;p;}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>highlight_flagged_edges</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>width</em> = <code>1000.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Write the graph in svg format to the specified stream</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">output_stream</td><td>The stream to which the svg data is written</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">coordinate_transform</td><td>A transformation applied to the coordinates defining the geometry of the graph edges before writing the svg. If e.g. the coordinates of the graph edges represent longitude and latitude, this defines the projection to planar coordinates.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">highlight_flagged_edges</td><td>If <code>true</code>, flagged edges are drawn red</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>The width of the svg in px </td></tr>

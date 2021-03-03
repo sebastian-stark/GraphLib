@@ -243,6 +243,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>write_svg</name>
+      <anchorfile>class_graph_lib_1_1_graph.html</anchorfile>
+      <anchor>ab0e0a6b6d4e209e615836f4df3fe8325</anchor>
+      <arglist>(std::ofstream &amp;output_stream, const std::function&lt; coordinate_t(const coordinate_t &amp;)&gt; &amp;coordinate_transform=[](const coordinate_t &amp;p) -&gt; coordinate_t{return p;}, const bool highlight_flagged_edges=false, const double width=1000.0) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>read_graph_from_osm</name>
       <anchorfile>class_graph_lib_1_1_graph.html</anchorfile>
       <anchor>accc2fe03dcb9ad88dd5dbee1d8fb17c1</anchor>

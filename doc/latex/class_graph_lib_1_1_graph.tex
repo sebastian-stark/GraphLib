@@ -21,6 +21,8 @@ void \mbox{\hyperlink{class_graph_lib_1_1_graph_ac619f84a3fe16cd25b4e5279d215cfd
 \item 
 void \mbox{\hyperlink{class_graph_lib_1_1_graph_af10505c386680bdb79efa0dc5b0f7f5d}{write\+\_\+svg}} (const std\+::string file\+\_\+name, const std\+::function$<$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$ \&coordinate\+\_\+transform=\mbox{[}$\,$\mbox{]}(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&p) -\/$>$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}\{return p;\}, const bool highlight\+\_\+flagged\+\_\+edges=false, const double width=1000.\+0) const
 \item 
+void \mbox{\hyperlink{class_graph_lib_1_1_graph_ab0e0a6b6d4e209e615836f4df3fe8325}{write\+\_\+svg}} (std\+::ofstream \&output\+\_\+stream, const std\+::function$<$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$ \&coordinate\+\_\+transform=\mbox{[}$\,$\mbox{]}(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&p) -\/$>$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}\{return p;\}, const bool highlight\+\_\+flagged\+\_\+edges=false, const double width=1000.\+0) const
+\item 
 void \mbox{\hyperlink{class_graph_lib_1_1_graph_accc2fe03dcb9ad88dd5dbee1d8fb17c1}{read\+\_\+graph\+\_\+from\+\_\+osm}} (const std\+::string file\+\_\+name, const std\+::function$<$ bool(const osmium\+::\+Way \&)$>$ \&include\+\_\+way, const std\+::function$<$ bool(const osmium\+::\+Node\+Ref \&)$>$ \&include\+\_\+node, const bool remove\+\_\+dead\+\_\+ends=false)
 \item 
 std\+::list$<$ std\+::pair$<$ const \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}} $\ast$, \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} $>$ $>$ \mbox{\hyperlink{class_graph_lib_1_1_graph_accf1e69b32cd4644bc7291337be9d8a6}{compute\+\_\+shortest\+\_\+path}} (const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} node\+\_\+1, const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} node\+\_\+2) const
@@ -221,7 +223,7 @@ Change the metric of the graph
 \mbox{\Hypertarget{class_graph_lib_1_1_graph_af10505c386680bdb79efa0dc5b0f7f5d}\label{class_graph_lib_1_1_graph_af10505c386680bdb79efa0dc5b0f7f5d}} 
 \index{GraphLib::Graph@{GraphLib::Graph}!write\_svg@{write\_svg}}
 \index{write\_svg@{write\_svg}!GraphLib::Graph@{GraphLib::Graph}}
-\doxysubsubsection{\texorpdfstring{write\_svg()}{write\_svg()}}
+\doxysubsubsection{\texorpdfstring{write\_svg()}{write\_svg()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Graph\+Lib\+::\+Graph\+::write\+\_\+svg (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+\_\+name,  }\item[{const std\+::function$<$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$ \&}]{coordinate\+\_\+transform = {\ttfamily \mbox{[}\mbox{]}(const~\mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}~\&p)~-\/$>$~\mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}\{return~p;\}},  }\item[{const bool}]{highlight\+\_\+flagged\+\_\+edges = {\ttfamily false},  }\item[{const double}]{width = {\ttfamily 1000.0} }\end{DoxyParamCaption}) const}
 
 Write the graph to the specified svg file
@@ -229,6 +231,25 @@ Write the graph to the specified svg file
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em file\+\_\+name} & The file name of the svg file (including the extension)\\
+\hline
+\mbox{\texttt{ in}}  & {\em coordinate\+\_\+transform} & A transformation applied to the coordinates defining the geometry of the graph edges before writing the svg. If e.\+g. the coordinates of the graph edges represent longitude and latitude, this defines the projection to planar coordinates.\\
+\hline
+\mbox{\texttt{ in}}  & {\em highlight\+\_\+flagged\+\_\+edges} & If {\ttfamily true}, flagged edges are drawn red\\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & The width of the svg in px \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_ab0e0a6b6d4e209e615836f4df3fe8325}\label{class_graph_lib_1_1_graph_ab0e0a6b6d4e209e615836f4df3fe8325}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!write\_svg@{write\_svg}}
+\index{write\_svg@{write\_svg}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{write\_svg()}{write\_svg()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Graph\+::write\+\_\+svg (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{output\+\_\+stream,  }\item[{const std\+::function$<$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$ \&}]{coordinate\+\_\+transform = {\ttfamily \mbox{[}\mbox{]}(const~\mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}~\&p)~-\/$>$~\mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}\{return~p;\}},  }\item[{const bool}]{highlight\+\_\+flagged\+\_\+edges = {\ttfamily false},  }\item[{const double}]{width = {\ttfamily 1000.0} }\end{DoxyParamCaption}) const}
+
+Write the graph in svg format to the specified stream
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em output\+\_\+stream} & The stream to which the svg data is written\\
 \hline
 \mbox{\texttt{ in}}  & {\em coordinate\+\_\+transform} & A transformation applied to the coordinates defining the geometry of the graph edges before writing the svg. If e.\+g. the coordinates of the graph edges represent longitude and latitude, this defines the projection to planar coordinates.\\
 \hline

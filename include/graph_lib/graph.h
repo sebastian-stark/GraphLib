@@ -407,6 +407,25 @@ public:
 	const;
 
 	/**
+	 * Write the graph in svg format to the specified stream
+	 *
+	 * @param[in]	output_stream			The stream to which the svg data is written
+	 *
+	 * @param[in]	coordinate_transform	A transformation applied to the coordinates defining the geometry of the graph edges before writing the svg.
+	 * 										If e.g. the coordinates of the graph edges represent longitude and latitude, this defines the projection to planar coordinates.
+	 *
+	 * @param[in]	highlight_flagged_edges	If @p true, flagged edges are drawn red
+	 *
+	 * @param[in]	width					The width of the svg in px
+	 */
+	void
+	write_svg(	std::ofstream& 											output_stream,
+				const std::function<coordinate_t(const coordinate_t&)>&	coordinate_transform = [](const coordinate_t& p) -> coordinate_t{return p;},
+				const bool 												highlight_flagged_edges = false,
+				const double 											width = 1000.0)
+	const;
+
+	/**
 	 * Read the graph from an *.osm.pbf file (only way and node information of the given file is taken into account).
 	 * The reading process will also "clean up" the graph, such that nodes with degree 2 are generally eliminated (the corresponding edges are joined).
 	 *
