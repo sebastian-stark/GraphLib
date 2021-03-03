@@ -393,7 +393,8 @@ public:
 	const;
 
 	/**
-	 * Read the graph from an .osm.pbf file
+	 * Read the graph from an .osm.pbf file.
+	 * The reading process will also "clean up" the graph, such that nodes of degree 2 are generally eliminated (the corresponding edges are joined).
 	 *
 	 * @param[in]	file_name			file (including path and extension)
 	 *
