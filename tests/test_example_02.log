@@ -1,0 +1,7 @@
+0 -> 1 (backward edge traversal)
+1 -> 2 (forward edge traversal)
+2 -> 5 (forward edge traversal)
+5 -> 3 (forward edge traversal)
+3 -> 4 (forward edge traversal)
+
+Total distance = 8.0645

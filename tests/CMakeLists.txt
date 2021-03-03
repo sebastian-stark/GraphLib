@@ -1,6 +1,7 @@
 # add new tests to this list
 LIST(APPEND TESTS test_example_00)
 LIST(APPEND TESTS test_example_01)
+LIST(APPEND TESTS test_example_02)
 
 FOREACH(TEST ${TESTS})
   ADD_EXECUTABLE(${TEST} ${TEST}.cc)

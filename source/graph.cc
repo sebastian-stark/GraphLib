@@ -570,14 +570,6 @@ namespace GraphLib
 				break;
 		}
 
-/*		for(auto e : shortest_path)
-		{
-			if(e.second == Direction::forward)
-				cout << e.first->node_1 << " -> " << e.first->node_2 << " (forward edge traversal)" << endl;
-			else
-				cout << e.first->node_2 << " -> " << e.first->node_1 << " (backward edge traversal)" << endl;
-		}*/
-
 		return shortest_path;
 
 	}
