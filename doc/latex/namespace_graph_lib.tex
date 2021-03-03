@@ -1,0 +1,71 @@
+\hypertarget{namespace_graph_lib}{}\doxysection{Graph\+Lib Namespace Reference}
+\label{namespace_graph_lib}\index{GraphLib@{GraphLib}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}}
+\item 
+class \mbox{\hyperlink{class_graph_lib_1_1_graph}{Graph}}
+\item 
+class \mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m}{Read\+O\+SM}}
+\item 
+class \mbox{\hyperlink{class_graph_lib_1_1_way_junctions}{Way\+Junctions}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} = osmium\+::object\+\_\+id\+\_\+type
+\item 
+using \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} = std\+::pair$<$ double, double $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} \{ \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5aaa2ad91d07f4899e1731dfca5bada28bf}{both}}, 
+\mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5aa4f1993b4fb95a1522bbfd6e8eb2ba733}{forward}}, 
+\mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5aae89cdf25233e0343c3828ce740db6a73}{backward}}, 
+\mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5aac4ab236595bdf9359fe00a9d8a62f243}{none}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}\label{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}} 
+\index{GraphLib@{GraphLib}!coordinate\_t@{coordinate\_t}}
+\index{coordinate\_t@{coordinate\_t}!GraphLib@{GraphLib}}
+\doxysubsubsection{\texorpdfstring{coordinate\_t}{coordinate\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{Graph\+Lib\+::coordinate\+\_\+t}} = typedef std\+::pair$<$double, double$>$}
+
+type for coordinates \mbox{\Hypertarget{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}\label{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}} 
+\index{GraphLib@{GraphLib}!Node@{Node}}
+\index{Node@{Node}!GraphLib@{GraphLib}}
+\doxysubsubsection{\texorpdfstring{Node}{Node}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Graph\+Lib\+::\+Node}} = typedef osmium\+::object\+\_\+id\+\_\+type}
+
+type for node index 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}\label{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}} 
+\index{GraphLib@{GraphLib}!Direction@{Direction}}
+\index{Direction@{Direction}!GraphLib@{GraphLib}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Graph\+Lib\+::\+Direction}}}
+
+enum indicating the direction of a way (both\+: way can be accessed in both directions, forward/backward\+: way can only be accessed in forward/backward direction, none\+: no access allowed) \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{both@{both}!GraphLib@{GraphLib}}\index{GraphLib@{GraphLib}!both@{both}}}\mbox{\Hypertarget{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5aaa2ad91d07f4899e1731dfca5bada28bf}\label{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5aaa2ad91d07f4899e1731dfca5bada28bf}} 
+both&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{forward@{forward}!GraphLib@{GraphLib}}\index{GraphLib@{GraphLib}!forward@{forward}}}\mbox{\Hypertarget{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5aa4f1993b4fb95a1522bbfd6e8eb2ba733}\label{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5aa4f1993b4fb95a1522bbfd6e8eb2ba733}} 
+forward&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{backward@{backward}!GraphLib@{GraphLib}}\index{GraphLib@{GraphLib}!backward@{backward}}}\mbox{\Hypertarget{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5aae89cdf25233e0343c3828ce740db6a73}\label{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5aae89cdf25233e0343c3828ce740db6a73}} 
+backward&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{none@{none}!GraphLib@{GraphLib}}\index{GraphLib@{GraphLib}!none@{none}}}\mbox{\Hypertarget{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5aac4ab236595bdf9359fe00a9d8a62f243}\label{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5aac4ab236595bdf9359fe00a9d8a62f243}} 
+none&\\
+\hline
+
+\end{DoxyEnumFields}

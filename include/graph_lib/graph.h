@@ -38,7 +38,7 @@ namespace GraphLib
 class Graph;
 
 /**
- * enum indicating the direction of a way (both: way can be accessed in both directions, forward/backward: way can only be accessed in forward/backward direction, no: no access allowed)
+ * enum indicating the direction of a way (both: way can be accessed in both directions, forward/backward: way can only be accessed in forward/backward direction, none: no access allowed)
  */
 enum Direction{both, forward, backward, none};
 
@@ -50,7 +50,7 @@ class WayJunctions : public osmium::handler::Handler
 private:
 
 	/**
-	 * map between node number and number of times this node appears in the ways
+	 * map between node number and number of times this node appears in the ways, used internally to determine output of WayJunctions::get_intermediate_nodes()
 	 */
 	mutable
 	std::unordered_map<Node, short unsigned int>
@@ -62,6 +62,9 @@ private:
 	std::function<bool(const osmium::Way&)>
 	include_way;
 
+	/**
+	 * bool indicating whether an OSM file has already been read in
+	 */
 	mutable
 	bool initialized = false;
 
@@ -70,12 +73,13 @@ public:
 	/**
 	 * Constructor
 	 *
-	 * @param[in]	include_way		WayJunctions::include_way
+	 * @param[in]	include_way		Function deciding whether to take a way into consideration or to ignore it;
+	 * 								if @p true is returned by the function, the way is taken into consideration (WayJunctions::include_way)
 	 */
 	WayJunctions(const std::function<bool(const osmium::Way&)> include_way);
 
 	/**
-	 * Function handling the node information of an individual node
+	 * Function processing a single way
 	 *
 	 * @param[in]	way		the current way
 	 */
@@ -83,8 +87,7 @@ public:
 	way(const osmium::Way& way);
 
 	/**
-	 * @return 	The nodes where ways must be split
-	 *
+	 * @return 	The nodes where ways must be split.
 	 * 			Each call to this function must be preceded by application of an osmium reader.
 	 */
 	std::set<Node>
@@ -129,13 +132,15 @@ public:
 	/**
 	 * Constructor
 	 *
-	 * @param[in]	graph				WayJunctions::graph
+	 * @param[in]	graph				The graph into which the map information is to be read (ReadOSM::graph)
 	 *
-	 * @param[in]	intermediate_nodes	WayJunctions::intermediate_nodes
+	 * @param[in]	intermediate_nodes	A set of nodes, at which ways need to be split into several edges, this set is determined with WayJunctions (ReadOSM::intermediate_nodes)
 	 *
-	 * @param[in]	include_way			WayJunctions::include_way
+	 * @param[in]	include_way			Function deciding whether to take a way into consideration or to ignore it;
+	 * 									if @p true is returned by the function, the way is taken into consideration (ReadOSM::include_way)
 	 *
-	 * @param[in]	include_node		WayJunctions::include_node
+	 * @param[in]	include_node		Function deciding whether to take a node into consideration or to ignore it;
+	 * 									if @p true is returned by the function, the node is taken into consideration (ReadOSM::include_node)
 	 */
 	ReadOSM(Graph&												graph,
 			const std::set<Node>&								intermediate_nodes,
@@ -143,7 +148,7 @@ public:
 			const std::function<bool(const osmium::NodeRef&)>	include_node);
 
 	/**
-	 * Function handling the node information of an individual node
+	 * Function processing a single way
 	 *
 	 * @param[in]	way		the current way
 	 */
@@ -260,6 +265,11 @@ public:
 	get_direction()
 	const;
 
+	/**
+	 * Set the direction of the edge
+	 *
+	 * @param[in]	direction	The new direction of the edge
+	 */
 	void
 	set_direction(const Direction direction)
 	const;
@@ -305,7 +315,9 @@ private:
 	/**
 	 * Map between the nodes of the graph and a set of edges associated with each node.
 	 * Using a map offers flexibility for adding new nodes/edges, removing nodes/edges and lookup of certain nodes.
-	 * In particular, no assumption of a contiguous node numbering is necessary with this approach.
+	 * In particular, no assumption of a contiguous node numbering is necessary with this approach. However, it is
+	 * of course not nearly as efficient (with regard to memory usage and computational cost of operations on the graph)
+	 * as using vectors together with a contiguous node numbering starting from 0.
 	 */
 	std::unordered_map<Node, std::set<Edge*>>
 	nodes;
@@ -368,7 +380,9 @@ public:
 
 	/**
 	 * This removes all edges from the Graph, which have been flagged before.
-	 * If one ends up with an isolated node (i.e., a not not being associated with any edges), this node is removed as well.
+	 * If one ends up with isolated nodes (i.e., nodes with degree 0), these nodes are removed from the graph as well.
+	 *
+	 * @see Edge::set_user_flag(), Edge::reset_user_flag(), Edge::get_user_flag()
 	 */
 	void
 	remove_flagged_edges();
@@ -379,7 +393,7 @@ public:
 	 * @param[in]	file_name				The file name of the svg file (including the extension)
 	 *
 	 * @param[in]	coordinate_transform	A transformation applied to the coordinates defining the geometry of the graph edges before writing the svg.
-	 * 										If e.g. the coordinates of the graph edges represent longitude and latitude, this defines the projection to planar coordinates
+	 * 										If e.g. the coordinates of the graph edges represent longitude and latitude, this defines the projection to planar coordinates.
 	 *
 	 * @param[in]	highlight_flagged_edges	If @p true, flagged edges are drawn red
 	 *
@@ -393,8 +407,8 @@ public:
 	const;
 
 	/**
-	 * Read the graph from an .osm.pbf file.
-	 * The reading process will also "clean up" the graph, such that nodes of degree 2 are generally eliminated (the corresponding edges are joined).
+	 * Read the graph from an *.osm.pbf file (only way and node information of the given file is taken into account).
+	 * The reading process will also "clean up" the graph, such that nodes with degree 2 are generally eliminated (the corresponding edges are joined).
 	 *
 	 * @param[in]	file_name			file (including path and extension)
 	 *
@@ -402,7 +416,10 @@ public:
 	 *
 	 * @param[in]	include_node		function deciding whether to take a node into consideration or to ignore it (if @p true is returned by the function, the node is taken into consideration)
 	 *
-	 * @param[in]	remove_dead_ends	if @p true, all nodes associated with only a single edge are removed (together with the corresponding edges). I.e., no "dead ends" are kept in the graph
+	 * @param[in]	remove_dead_ends	if @p true, all nodes with degree 1 are removed (together with the corresponding edges). I.e., no "dead ends" are kept in the graph
+	 *
+	 * @warning							Reading and processing *.osm.pdf files can take a very long time due to their size. So, the files are ideally clipped to the region really needed. The latter
+	 * 									can be achieved e.g. by	using the Osmium tool (command "osmium extract")
 	 */
 	void
 	read_graph_from_osm(const std::string 									file_name,
@@ -417,7 +434,10 @@ public:
 	 *
 	 * @param[in]	node_2	End node
 	 *
-	 * @return				List of pairs of edges and directions. Describes the shortest path from @p node_1 to @p node_2. If no path is found, an empty list is returned.
+	 * @return				List of pairs of edges and directions describing the shortest path from @p node_1 to @p node_2.
+	 * 						The list is ordered by the order of traversal of the edges when following the shortest path;
+	 * 						and Direction::forward indicates that an edge is traversed from node 1 to node 2,
+	 * 						while Direction::backward indicates than an edge is traversed from node 2 to node 1.
 	 */
 	std::list<std::pair<const Edge*, Direction>>
 	compute_shortest_path(	const Node node_1,
@@ -425,7 +445,7 @@ public:
 	const;
 
 	/**
-	 * Return the node closest to @p, while ignoring all nodes stored in @p p_ignore.
+	 * Return the node closest to @p p, while ignoring all nodes stored in @p p_ignore.
 	 *
 	 * @param[in]	p				The coordinates of the point to which the closest node is to be found
 	 *

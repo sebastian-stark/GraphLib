@@ -1,0 +1,216 @@
+\hypertarget{class_graph_lib_1_1_edge}{}\doxysection{Graph\+Lib\+::Edge Class Reference}
+\label{class_graph_lib_1_1_edge}\index{GraphLib::Edge@{GraphLib::Edge}}
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph_lib_1_1_edge_afe94bd989f0d22ace5ae9cfb2e7d7686}{Edge}} (const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} \mbox{\hyperlink{class_graph_lib_1_1_edge_a832274adf1038129b5242e0bb2c8b13e}{node\+\_\+1}}, const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} \mbox{\hyperlink{class_graph_lib_1_1_edge_aed2f7e2694a120b809a1bce761dfea29}{node\+\_\+2}}, const std\+::vector$<$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} $>$ \&\mbox{\hyperlink{class_graph_lib_1_1_edge_a83765300e5223435c4aba672060e28c8}{coordinates}}, const \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} \mbox{\hyperlink{class_graph_lib_1_1_edge_a5c7e1a7035fd436b47525483697d5f5e}{direction}}=Direction\+::both)
+\item 
+void \mbox{\hyperlink{class_graph_lib_1_1_edge_a848b1216268d43a79dd1a0fcbae166e1}{set\+\_\+user\+\_\+flag}} () const
+\item 
+void \mbox{\hyperlink{class_graph_lib_1_1_edge_a42c2c76c3cf78be1ab318612cb5b05ce}{reset\+\_\+user\+\_\+flag}} () const
+\item 
+\mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} \mbox{\hyperlink{class_graph_lib_1_1_edge_a85ff4ef7cf27bf4076a65071c901ea81}{get\+\_\+node\+\_\+1}} () const
+\item 
+\mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} \mbox{\hyperlink{class_graph_lib_1_1_edge_abe43908e9e800fabfe6e41b3704759af}{get\+\_\+node\+\_\+2}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} $>$ \& \mbox{\hyperlink{class_graph_lib_1_1_edge_a1cb6b49834a87c27f54e82a141876431}{get\+\_\+coordinates}} () const
+\item 
+\mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} \mbox{\hyperlink{class_graph_lib_1_1_edge_a0e6f08c306d109ba35eab742eaf3dba9}{get\+\_\+direction}} () const
+\item 
+void \mbox{\hyperlink{class_graph_lib_1_1_edge_a126cb65cc3d9af7bad99d4ce3a472ab8}{set\+\_\+direction}} (const \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} \mbox{\hyperlink{class_graph_lib_1_1_edge_a5c7e1a7035fd436b47525483697d5f5e}{direction}}) const
+\item 
+bool \mbox{\hyperlink{class_graph_lib_1_1_edge_afc4a997a6f729101d8570f825bc7f387}{get\+\_\+user\+\_\+flag}} () const
+\item 
+double \mbox{\hyperlink{class_graph_lib_1_1_edge_adc79ef6f59b91f139a8795e290bc0d8a}{get\+\_\+length}} (const std\+::function$<$ double(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&, const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$ \&metric) const
+\item 
+void \mbox{\hyperlink{class_graph_lib_1_1_edge_ac16ea5914d26c1c7283739a5c7c91f5f}{flip\+\_\+edge}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} \mbox{\hyperlink{class_graph_lib_1_1_edge_a832274adf1038129b5242e0bb2c8b13e}{node\+\_\+1}}
+\item 
+\mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} \mbox{\hyperlink{class_graph_lib_1_1_edge_aed2f7e2694a120b809a1bce761dfea29}{node\+\_\+2}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} $>$ \mbox{\hyperlink{class_graph_lib_1_1_edge_a83765300e5223435c4aba672060e28c8}{coordinates}}
+\item 
+\mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} \mbox{\hyperlink{class_graph_lib_1_1_edge_a5c7e1a7035fd436b47525483697d5f5e}{direction}} = Direction\+::both
+\item 
+bool \mbox{\hyperlink{class_graph_lib_1_1_edge_aa2eefe27efb6d9cb02c3155de7115d62}{user\+\_\+flag}} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_graph_lib_1_1_edge_afab89afd724f1b07b1aaad6bdc61c47a}{Graph}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class defining an edge in the graph 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_edge_afe94bd989f0d22ace5ae9cfb2e7d7686}\label{class_graph_lib_1_1_edge_afe94bd989f0d22ace5ae9cfb2e7d7686}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}}
+{\footnotesize\ttfamily Graph\+Lib\+::\+Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}}]{node\+\_\+1,  }\item[{const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}}]{node\+\_\+2,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} $>$ \&}]{coordinates,  }\item[{const \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}}}]{direction = {\ttfamily Direction\+:\+:both} }\end{DoxyParamCaption})}
+
+Constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em node\+\_\+1} & the first node making up the edge\\
+\hline
+\mbox{\texttt{ in}}  & {\em node\+\_\+2} & the second node making up the edge\\
+\hline
+\mbox{\texttt{ in}}  & {\em coordinates} & the coordinates describing the geometry of the edge when going from {\ttfamily node\+\_\+1} to {\ttfamily node\+\_\+2} \\
+\hline
+\mbox{\texttt{ in}}  & {\em direction} & the direction of the edge \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_edge_ac16ea5914d26c1c7283739a5c7c91f5f}\label{class_graph_lib_1_1_edge_ac16ea5914d26c1c7283739a5c7c91f5f}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!flip\_edge@{flip\_edge}}
+\index{flip\_edge@{flip\_edge}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{flip\_edge()}{flip\_edge()}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Edge\+::flip\+\_\+edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+reverses the direction of an edge \mbox{\Hypertarget{class_graph_lib_1_1_edge_a1cb6b49834a87c27f54e82a141876431}\label{class_graph_lib_1_1_edge_a1cb6b49834a87c27f54e82a141876431}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!get\_coordinates@{get\_coordinates}}
+\index{get\_coordinates@{get\_coordinates}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{get\_coordinates()}{get\_coordinates()}}
+{\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}$>$\& Graph\+Lib\+::\+Edge\+::get\+\_\+coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+reference to the coordinates defining the geometry of the edge 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_edge_a0e6f08c306d109ba35eab742eaf3dba9}\label{class_graph_lib_1_1_edge_a0e6f08c306d109ba35eab742eaf3dba9}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!get\_direction@{get\_direction}}
+\index{get\_direction@{get\_direction}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{get\_direction()}{get\_direction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} Graph\+Lib\+::\+Edge\+::get\+\_\+direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The direction flag of the edge 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_edge_adc79ef6f59b91f139a8795e290bc0d8a}\label{class_graph_lib_1_1_edge_adc79ef6f59b91f139a8795e290bc0d8a}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!get\_length@{get\_length}}
+\index{get\_length@{get\_length}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{get\_length()}{get\_length()}}
+{\footnotesize\ttfamily double Graph\+Lib\+::\+Edge\+::get\+\_\+length (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&, const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$ \&}]{metric }\end{DoxyParamCaption}) const}
+
+Compute the length of the edge using \mbox{\hyperlink{class_graph_lib_1_1_edge_a83765300e5223435c4aba672060e28c8}{Edge\+::coordinates}} and the specified metric
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em metric} & The given metric function\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the edge 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_edge_a85ff4ef7cf27bf4076a65071c901ea81}\label{class_graph_lib_1_1_edge_a85ff4ef7cf27bf4076a65071c901ea81}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!get\_node\_1@{get\_node\_1}}
+\index{get\_node\_1@{get\_node\_1}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{get\_node\_1()}{get\_node\_1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} Graph\+Lib\+::\+Edge\+::get\+\_\+node\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+node 1 of the edge 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_edge_abe43908e9e800fabfe6e41b3704759af}\label{class_graph_lib_1_1_edge_abe43908e9e800fabfe6e41b3704759af}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!get\_node\_2@{get\_node\_2}}
+\index{get\_node\_2@{get\_node\_2}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{get\_node\_2()}{get\_node\_2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} Graph\+Lib\+::\+Edge\+::get\+\_\+node\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+node 2 of the edge 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_edge_afc4a997a6f729101d8570f825bc7f387}\label{class_graph_lib_1_1_edge_afc4a997a6f729101d8570f825bc7f387}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!get\_user\_flag@{get\_user\_flag}}
+\index{get\_user\_flag@{get\_user\_flag}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{get\_user\_flag()}{get\_user\_flag()}}
+{\footnotesize\ttfamily bool Graph\+Lib\+::\+Edge\+::get\+\_\+user\+\_\+flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+whether the edge is currently flagged 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_edge_a42c2c76c3cf78be1ab318612cb5b05ce}\label{class_graph_lib_1_1_edge_a42c2c76c3cf78be1ab318612cb5b05ce}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!reset\_user\_flag@{reset\_user\_flag}}
+\index{reset\_user\_flag@{reset\_user\_flag}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{reset\_user\_flag()}{reset\_user\_flag()}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Edge\+::reset\+\_\+user\+\_\+flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Unflag the edge \mbox{\Hypertarget{class_graph_lib_1_1_edge_a126cb65cc3d9af7bad99d4ce3a472ab8}\label{class_graph_lib_1_1_edge_a126cb65cc3d9af7bad99d4ce3a472ab8}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!set\_direction@{set\_direction}}
+\index{set\_direction@{set\_direction}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{set\_direction()}{set\_direction()}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Edge\+::set\+\_\+direction (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}}}]{direction }\end{DoxyParamCaption}) const}
+
+Set the direction of the edge
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em direction} & The new direction of the edge \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_lib_1_1_edge_a848b1216268d43a79dd1a0fcbae166e1}\label{class_graph_lib_1_1_edge_a848b1216268d43a79dd1a0fcbae166e1}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!set\_user\_flag@{set\_user\_flag}}
+\index{set\_user\_flag@{set\_user\_flag}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{set\_user\_flag()}{set\_user\_flag()}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Edge\+::set\+\_\+user\+\_\+flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Flag the edge 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_edge_afab89afd724f1b07b1aaad6bdc61c47a}\label{class_graph_lib_1_1_edge_afab89afd724f1b07b1aaad6bdc61c47a}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!Graph@{Graph}}
+\index{Graph@{Graph}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{Graph}{Graph}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_graph_lib_1_1_graph}{Graph}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+make \mbox{\hyperlink{class_graph_lib_1_1_graph}{Graph}} a friend of \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}} 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_edge_a83765300e5223435c4aba672060e28c8}\label{class_graph_lib_1_1_edge_a83765300e5223435c4aba672060e28c8}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!coordinates@{coordinates}}
+\index{coordinates@{coordinates}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{coordinates}{coordinates}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}$>$ Graph\+Lib\+::\+Edge\+::coordinates\hspace{0.3cm}{\ttfamily [private]}}
+
+A vector of (x,y) pairs forming the edge. The first element in the vector corresponds to the \char`\"{}location\char`\"{} of \mbox{\hyperlink{class_graph_lib_1_1_edge_a832274adf1038129b5242e0bb2c8b13e}{Edge\+::node\+\_\+1}}. The last element in the vector corresponds to the \char`\"{}location\char`\"{} of \mbox{\hyperlink{class_graph_lib_1_1_edge_aed2f7e2694a120b809a1bce761dfea29}{Edge\+::node\+\_\+2}}. The other elements in the vector describe the \char`\"{}shape\char`\"{} of the edge as one goes from \mbox{\hyperlink{class_graph_lib_1_1_edge_a832274adf1038129b5242e0bb2c8b13e}{Edge\+::node\+\_\+1}} to \mbox{\hyperlink{class_graph_lib_1_1_edge_aed2f7e2694a120b809a1bce761dfea29}{Edge\+::node\+\_\+2}}. \mbox{\Hypertarget{class_graph_lib_1_1_edge_a5c7e1a7035fd436b47525483697d5f5e}\label{class_graph_lib_1_1_edge_a5c7e1a7035fd436b47525483697d5f5e}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!direction@{direction}}
+\index{direction@{direction}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} Graph\+Lib\+::\+Edge\+::direction = Direction\+::both\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+Direction of the edge (may be modified through public member function) \mbox{\Hypertarget{class_graph_lib_1_1_edge_a832274adf1038129b5242e0bb2c8b13e}\label{class_graph_lib_1_1_edge_a832274adf1038129b5242e0bb2c8b13e}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!node\_1@{node\_1}}
+\index{node\_1@{node\_1}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{node\_1}{node\_1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} Graph\+Lib\+::\+Edge\+::node\+\_\+1\hspace{0.3cm}{\ttfamily [private]}}
+
+first node assoicated with the edge \mbox{\Hypertarget{class_graph_lib_1_1_edge_aed2f7e2694a120b809a1bce761dfea29}\label{class_graph_lib_1_1_edge_aed2f7e2694a120b809a1bce761dfea29}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!node\_2@{node\_2}}
+\index{node\_2@{node\_2}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{node\_2}{node\_2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} Graph\+Lib\+::\+Edge\+::node\+\_\+2\hspace{0.3cm}{\ttfamily [private]}}
+
+second node associated with the edge \mbox{\Hypertarget{class_graph_lib_1_1_edge_aa2eefe27efb6d9cb02c3155de7115d62}\label{class_graph_lib_1_1_edge_aa2eefe27efb6d9cb02c3155de7115d62}} 
+\index{GraphLib::Edge@{GraphLib::Edge}!user\_flag@{user\_flag}}
+\index{user\_flag@{user\_flag}!GraphLib::Edge@{GraphLib::Edge}}
+\doxysubsubsection{\texorpdfstring{user\_flag}{user\_flag}}
+{\footnotesize\ttfamily bool Graph\+Lib\+::\+Edge\+::user\+\_\+flag = false\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+flag, which may be set by the user to indicate that the edge participates in some collective operation on the edges of the graph (like removal of all flagged edges) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/sst/code/\+Graph\+Lib/\+Graph\+Lib/include/graph\+\_\+lib/\mbox{\hyperlink{graph_8h}{graph.\+h}}\end{DoxyCompactItemize}

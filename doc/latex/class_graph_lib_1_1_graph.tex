@@ -1,0 +1,265 @@
+\hypertarget{class_graph_lib_1_1_graph}{}\doxysection{Graph\+Lib\+::Graph Class Reference}
+\label{class_graph_lib_1_1_graph}\index{GraphLib::Graph@{GraphLib::Graph}}
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph_lib_1_1_graph_aca7f98e3f4acd61ca612750ffb64543f}{Graph}} (const std\+::function$<$ double(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&, const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$ \mbox{\hyperlink{class_graph_lib_1_1_graph_a90a90d7364f268d51f05dffd002c3ef7}{metric}})
+\item 
+void \mbox{\hyperlink{class_graph_lib_1_1_graph_a130b4b82cca0ca986c220d2532bcc479}{set\+\_\+metric}} (const std\+::function$<$ double(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&, const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$ \mbox{\hyperlink{class_graph_lib_1_1_graph_a90a90d7364f268d51f05dffd002c3ef7}{metric}})
+\item 
+void \mbox{\hyperlink{class_graph_lib_1_1_graph_aeb13a8c4f1d861dcd62aa72cb2b505b1}{add\+\_\+edge}} (const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} node\+\_\+1, const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} node\+\_\+2, std\+::vector$<$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} $>$ coordinates, \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} direction=Direction\+::both)
+\item 
+std\+::list$<$ \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}} $>$\+::iterator \mbox{\hyperlink{class_graph_lib_1_1_graph_a3e592bff23dd764067af391d91fd59b0}{begin}} ()
+\item 
+std\+::list$<$ \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}} $>$\+::iterator \mbox{\hyperlink{class_graph_lib_1_1_graph_a1f23adba10adb5712c0bde84d24d154e}{end}} ()
+\item 
+void \mbox{\hyperlink{class_graph_lib_1_1_graph_ac619f84a3fe16cd25b4e5279d215cfd0}{remove\+\_\+flagged\+\_\+edges}} ()
+\item 
+void \mbox{\hyperlink{class_graph_lib_1_1_graph_af10505c386680bdb79efa0dc5b0f7f5d}{write\+\_\+svg}} (const std\+::string file\+\_\+name, const std\+::function$<$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$ \&coordinate\+\_\+transform=\mbox{[}$\,$\mbox{]}(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&p) -\/$>$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}\{return p;\}, const bool highlight\+\_\+flagged\+\_\+edges=false, const double width=1000.\+0) const
+\item 
+void \mbox{\hyperlink{class_graph_lib_1_1_graph_accc2fe03dcb9ad88dd5dbee1d8fb17c1}{read\+\_\+graph\+\_\+from\+\_\+osm}} (const std\+::string file\+\_\+name, const std\+::function$<$ bool(const osmium\+::\+Way \&)$>$ \&include\+\_\+way, const std\+::function$<$ bool(const osmium\+::\+Node\+Ref \&)$>$ \&include\+\_\+node, const bool remove\+\_\+dead\+\_\+ends=false)
+\item 
+std\+::list$<$ std\+::pair$<$ const \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}} $\ast$, \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} $>$ $>$ \mbox{\hyperlink{class_graph_lib_1_1_graph_accf1e69b32cd4644bc7291337be9d8a6}{compute\+\_\+shortest\+\_\+path}} (const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} node\+\_\+1, const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} node\+\_\+2) const
+\item 
+\mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} \mbox{\hyperlink{class_graph_lib_1_1_graph_a648d1bfbd8a9c70b41be6c4bf846ad6a}{get\+\_\+closest\+\_\+node}} (const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} p, const std\+::set$<$ \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} $>$ nodes\+\_\+ignore=std\+::set$<$ \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} $>$()) const
+\item 
+unsigned int \mbox{\hyperlink{class_graph_lib_1_1_graph_a635d70d0608d1f1293758db509707832}{get\+\_\+degree}} (const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} node) const
+\item 
+unsigned int \mbox{\hyperlink{class_graph_lib_1_1_graph_a1e38ef4ff5888cec1b03b250e102bb52}{get\+\_\+n\+\_\+nodes}} () const
+\item 
+unsigned int \mbox{\hyperlink{class_graph_lib_1_1_graph_a57b4def7d2dad543ac2d347be43d7c5a}{get\+\_\+n\+\_\+edges}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}} $>$ \mbox{\hyperlink{class_graph_lib_1_1_graph_af1d98d86195763d4252d2bbbc2489f90}{edges}}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}, std\+::set$<$ \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}} $\ast$ $>$ $>$ \mbox{\hyperlink{class_graph_lib_1_1_graph_ad51721d9af94391bbc63332404867848}{nodes}}
+\item 
+std\+::function$<$ double(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&, const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$ \mbox{\hyperlink{class_graph_lib_1_1_graph_a90a90d7364f268d51f05dffd002c3ef7}{metric}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class managing a graph, with each edge being associated with geometrical information about its shape. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_aca7f98e3f4acd61ca612750ffb64543f}\label{class_graph_lib_1_1_graph_aca7f98e3f4acd61ca612750ffb64543f}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily Graph\+Lib\+::\+Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&, const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$}]{metric }\end{DoxyParamCaption})}
+
+Constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em metric} & The metric to be used to determine distances along edges of the graph \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_aeb13a8c4f1d861dcd62aa72cb2b505b1}\label{class_graph_lib_1_1_graph_aeb13a8c4f1d861dcd62aa72cb2b505b1}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!add\_edge@{add\_edge}}
+\index{add\_edge@{add\_edge}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{add\_edge()}{add\_edge()}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Graph\+::add\+\_\+edge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}}]{node\+\_\+1,  }\item[{const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}}]{node\+\_\+2,  }\item[{std\+::vector$<$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} $>$}]{coordinates,  }\item[{\mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}}}]{direction = {\ttfamily Direction\+:\+:both} }\end{DoxyParamCaption})}
+
+Add an edge.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em node\+\_\+1} & the first node making up the edge\\
+\hline
+\mbox{\texttt{ in}}  & {\em node\+\_\+2} & the second node making up the edge\\
+\hline
+\mbox{\texttt{ in}}  & {\em coordinates} & the coordinates describing the geometry of the edge when going from {\ttfamily node\+\_\+1} to {\ttfamily node\+\_\+2} \\
+\hline
+\mbox{\texttt{ in}}  & {\em direction} & the direction of the edge \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_a3e592bff23dd764067af391d91fd59b0}\label{class_graph_lib_1_1_graph_a3e592bff23dd764067af391d91fd59b0}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!begin@{begin}}
+\index{begin@{begin}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}}$>$\+::iterator Graph\+Lib\+::\+Graph\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+begin iterator over the edges of the \mbox{\hyperlink{class_graph_lib_1_1_graph}{Graph}}
+
+\begin{DoxyReturn}{Returns}
+begin iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_accf1e69b32cd4644bc7291337be9d8a6}\label{class_graph_lib_1_1_graph_accf1e69b32cd4644bc7291337be9d8a6}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!compute\_shortest\_path@{compute\_shortest\_path}}
+\index{compute\_shortest\_path@{compute\_shortest\_path}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{compute\_shortest\_path()}{compute\_shortest\_path()}}
+{\footnotesize\ttfamily std\+::list$<$std\+::pair$<$const \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}}$\ast$, \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}}$>$ $>$ Graph\+Lib\+::\+Graph\+::compute\+\_\+shortest\+\_\+path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}}]{node\+\_\+1,  }\item[{const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}}]{node\+\_\+2 }\end{DoxyParamCaption}) const}
+
+Function calculating shortest path between {\ttfamily node\+\_\+1} and {\ttfamily node\+\_\+2} based on Dijkstra\textquotesingle{}s algorithm.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em node\+\_\+1} & Start node\\
+\hline
+\mbox{\texttt{ in}}  & {\em node\+\_\+2} & End node\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of pairs of edges and directions describing the shortest path from {\ttfamily node\+\_\+1} to {\ttfamily node\+\_\+2}. The list is ordered by the order of traversal of the edges when following the shortest path; and Direction\+::forward indicates that an edge is traversed from node 1 to node 2, while Direction\+::backward indicates than an edge is traversed from node 2 to node 1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_a1f23adba10adb5712c0bde84d24d154e}\label{class_graph_lib_1_1_graph_a1f23adba10adb5712c0bde84d24d154e}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!end@{end}}
+\index{end@{end}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}}$>$\+::iterator Graph\+Lib\+::\+Graph\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+end iterator over the edges of the \mbox{\hyperlink{class_graph_lib_1_1_graph}{Graph}}
+
+\begin{DoxyReturn}{Returns}
+end iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_a648d1bfbd8a9c70b41be6c4bf846ad6a}\label{class_graph_lib_1_1_graph_a648d1bfbd8a9c70b41be6c4bf846ad6a}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!get\_closest\_node@{get\_closest\_node}}
+\index{get\_closest\_node@{get\_closest\_node}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{get\_closest\_node()}{get\_closest\_node()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} Graph\+Lib\+::\+Graph\+::get\+\_\+closest\+\_\+node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}}]{p,  }\item[{const std\+::set$<$ \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} $>$}]{nodes\+\_\+ignore = {\ttfamily std\+:\+:set$<$~\mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}~$>$()} }\end{DoxyParamCaption}) const}
+
+Return the node closest to {\ttfamily p}, while ignoring all nodes stored in {\ttfamily p\+\_\+ignore}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p} & The coordinates of the point to which the closest node is to be found\\
+\hline
+\mbox{\texttt{ in}}  & {\em nodes\+\_\+ignore} & A set of nodes to be ignored during the search \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_a635d70d0608d1f1293758db509707832}\label{class_graph_lib_1_1_graph_a635d70d0608d1f1293758db509707832}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!get\_degree@{get\_degree}}
+\index{get\_degree@{get\_degree}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{get\_degree()}{get\_degree()}}
+{\footnotesize\ttfamily unsigned int Graph\+Lib\+::\+Graph\+::get\+\_\+degree (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}}]{node }\end{DoxyParamCaption}) const}
+
+Return the degree of a node (not considering direction of edges)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em node} & The node index\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The degree of {\ttfamily node} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_a57b4def7d2dad543ac2d347be43d7c5a}\label{class_graph_lib_1_1_graph_a57b4def7d2dad543ac2d347be43d7c5a}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!get\_n\_edges@{get\_n\_edges}}
+\index{get\_n\_edges@{get\_n\_edges}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{get\_n\_edges()}{get\_n\_edges()}}
+{\footnotesize\ttfamily unsigned int Graph\+Lib\+::\+Graph\+::get\+\_\+n\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The number of edges involved in the graph 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_a1e38ef4ff5888cec1b03b250e102bb52}\label{class_graph_lib_1_1_graph_a1e38ef4ff5888cec1b03b250e102bb52}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!get\_n\_nodes@{get\_n\_nodes}}
+\index{get\_n\_nodes@{get\_n\_nodes}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{get\_n\_nodes()}{get\_n\_nodes()}}
+{\footnotesize\ttfamily unsigned int Graph\+Lib\+::\+Graph\+::get\+\_\+n\+\_\+nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The number of nodes involved in the graph 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_accc2fe03dcb9ad88dd5dbee1d8fb17c1}\label{class_graph_lib_1_1_graph_accc2fe03dcb9ad88dd5dbee1d8fb17c1}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!read\_graph\_from\_osm@{read\_graph\_from\_osm}}
+\index{read\_graph\_from\_osm@{read\_graph\_from\_osm}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{read\_graph\_from\_osm()}{read\_graph\_from\_osm()}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Graph\+::read\+\_\+graph\+\_\+from\+\_\+osm (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+\_\+name,  }\item[{const std\+::function$<$ bool(const osmium\+::\+Way \&)$>$ \&}]{include\+\_\+way,  }\item[{const std\+::function$<$ bool(const osmium\+::\+Node\+Ref \&)$>$ \&}]{include\+\_\+node,  }\item[{const bool}]{remove\+\_\+dead\+\_\+ends = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Read the graph from an $\ast$.osm.\+pbf file (only way and node information of the given file is taken into account). The reading process will also \char`\"{}clean up\char`\"{} the graph, such that nodes with degree 2 are generally eliminated (the corresponding edges are joined).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file\+\_\+name} & file (including path and extension)\\
+\hline
+\mbox{\texttt{ in}}  & {\em include\+\_\+way} & function deciding whether to take a way into consideration or to ignore it (if {\ttfamily true} is returned by the function, the way is taken into consideration)\\
+\hline
+\mbox{\texttt{ in}}  & {\em include\+\_\+node} & function deciding whether to take a node into consideration or to ignore it (if {\ttfamily true} is returned by the function, the node is taken into consideration)\\
+\hline
+\mbox{\texttt{ in}}  & {\em remove\+\_\+dead\+\_\+ends} & if {\ttfamily true}, all nodes with degree 1 are removed (together with the corresponding edges). I.\+e., no \char`\"{}dead ends\char`\"{} are kept in the graph\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Reading and processing $\ast$.osm.\+pdf files can take a very long time due to their size. So, the files are ideally clipped to the region really needed. The latter can be achieved e.\+g. by using the Osmium tool (command \char`\"{}osmium extract\char`\"{}) 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_ac619f84a3fe16cd25b4e5279d215cfd0}\label{class_graph_lib_1_1_graph_ac619f84a3fe16cd25b4e5279d215cfd0}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!remove\_flagged\_edges@{remove\_flagged\_edges}}
+\index{remove\_flagged\_edges@{remove\_flagged\_edges}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{remove\_flagged\_edges()}{remove\_flagged\_edges()}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Graph\+::remove\+\_\+flagged\+\_\+edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This removes all edges from the \mbox{\hyperlink{class_graph_lib_1_1_graph}{Graph}}, which have been flagged before. If one ends up with isolated nodes (i.\+e., nodes with degree 0), these nodes are removed from the graph as well.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_graph_lib_1_1_edge_a848b1216268d43a79dd1a0fcbae166e1}{Edge\+::set\+\_\+user\+\_\+flag()}}, \mbox{\hyperlink{class_graph_lib_1_1_edge_a42c2c76c3cf78be1ab318612cb5b05ce}{Edge\+::reset\+\_\+user\+\_\+flag()}}, \mbox{\hyperlink{class_graph_lib_1_1_edge_afc4a997a6f729101d8570f825bc7f387}{Edge\+::get\+\_\+user\+\_\+flag()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_a130b4b82cca0ca986c220d2532bcc479}\label{class_graph_lib_1_1_graph_a130b4b82cca0ca986c220d2532bcc479}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!set\_metric@{set\_metric}}
+\index{set\_metric@{set\_metric}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{set\_metric()}{set\_metric()}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Graph\+::set\+\_\+metric (\begin{DoxyParamCaption}\item[{const std\+::function$<$ double(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&, const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$}]{metric }\end{DoxyParamCaption})}
+
+Change the metric of the graph
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em metric} & The new metric function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_af10505c386680bdb79efa0dc5b0f7f5d}\label{class_graph_lib_1_1_graph_af10505c386680bdb79efa0dc5b0f7f5d}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!write\_svg@{write\_svg}}
+\index{write\_svg@{write\_svg}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{write\_svg()}{write\_svg()}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Graph\+::write\+\_\+svg (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+\_\+name,  }\item[{const std\+::function$<$ \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} \&)$>$ \&}]{coordinate\+\_\+transform = {\ttfamily \mbox{[}\mbox{]}(const~\mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}~\&p)~-\/$>$~\mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}\{return~p;\}},  }\item[{const bool}]{highlight\+\_\+flagged\+\_\+edges = {\ttfamily false},  }\item[{const double}]{width = {\ttfamily 1000.0} }\end{DoxyParamCaption}) const}
+
+Write the graph to the specified svg file
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file\+\_\+name} & The file name of the svg file (including the extension)\\
+\hline
+\mbox{\texttt{ in}}  & {\em coordinate\+\_\+transform} & A transformation applied to the coordinates defining the geometry of the graph edges before writing the svg. If e.\+g. the coordinates of the graph edges represent longitude and latitude, this defines the projection to planar coordinates.\\
+\hline
+\mbox{\texttt{ in}}  & {\em highlight\+\_\+flagged\+\_\+edges} & If {\ttfamily true}, flagged edges are drawn red\\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & The width of the svg in px \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_af1d98d86195763d4252d2bbbc2489f90}\label{class_graph_lib_1_1_graph_af1d98d86195763d4252d2bbbc2489f90}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!edges@{edges}}
+\index{edges@{edges}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{edges}{edges}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}}$>$ Graph\+Lib\+::\+Graph\+::edges\hspace{0.3cm}{\ttfamily [private]}}
+
+List containing the edges of the graph. \mbox{\Hypertarget{class_graph_lib_1_1_graph_a90a90d7364f268d51f05dffd002c3ef7}\label{class_graph_lib_1_1_graph_a90a90d7364f268d51f05dffd002c3ef7}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!metric@{metric}}
+\index{metric@{metric}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{metric}{metric}}
+{\footnotesize\ttfamily std\+::function$<$double(const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}\&, const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}}\&)$>$ Graph\+Lib\+::\+Graph\+::metric\hspace{0.3cm}{\ttfamily [private]}}
+
+The metric used for the graph \mbox{\Hypertarget{class_graph_lib_1_1_graph_ad51721d9af94391bbc63332404867848}\label{class_graph_lib_1_1_graph_ad51721d9af94391bbc63332404867848}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!nodes@{nodes}}
+\index{nodes@{nodes}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}, std\+::set$<$\mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}}$\ast$$>$ $>$ Graph\+Lib\+::\+Graph\+::nodes\hspace{0.3cm}{\ttfamily [private]}}
+
+Map between the nodes of the graph and a set of edges associated with each node. Using a map offers flexibility for adding new nodes/edges, removing nodes/edges and lookup of certain nodes. In particular, no assumption of a contiguous node numbering is necessary with this approach. However, it is of course not nearly as efficient (with regard to memory usage and computational cost of operations on the graph) as using vectors together with a contiguous node numbering starting from 0. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/sst/code/\+Graph\+Lib/\+Graph\+Lib/include/graph\+\_\+lib/\mbox{\hyperlink{graph_8h}{graph.\+h}}\end{DoxyCompactItemize}

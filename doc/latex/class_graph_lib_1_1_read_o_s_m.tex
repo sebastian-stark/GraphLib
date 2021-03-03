@@ -1,0 +1,115 @@
+\hypertarget{class_graph_lib_1_1_read_o_s_m}{}\doxysection{Graph\+Lib\+::Read\+O\+SM Class Reference}
+\label{class_graph_lib_1_1_read_o_s_m}\index{GraphLib::ReadOSM@{GraphLib::ReadOSM}}
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+
+
+Inheritance diagram for Graph\+Lib\+::Read\+O\+SM\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_graph_lib_1_1_read_o_s_m__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Graph\+Lib\+::Read\+O\+SM\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_graph_lib_1_1_read_o_s_m__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_aef838502cbd33ab503530a04ac3ed2fd}{Read\+O\+SM}} (\mbox{\hyperlink{class_graph_lib_1_1_graph}{Graph}} \&\mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_ad20a9a3f700b05a6dd773f9b2509921e}{graph}}, const std\+::set$<$ \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} $>$ \&\mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_a9587fcdde3a6deac62d083a9bd6bee2e}{intermediate\+\_\+nodes}}, const std\+::function$<$ bool(const osmium\+::\+Way \&)$>$ \mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_a7f545b229c9a2c1b405173fc1c9421a9}{include\+\_\+way}}, const std\+::function$<$ bool(const osmium\+::\+Node\+Ref \&)$>$ \mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_adeb79afc63e819bf550a35cd373516f7}{include\+\_\+node}})
+\item 
+void \mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_a0ec277731dcc05f028ff3dc4610d31f4}{way}} (const osmium\+::\+Way \&way)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph_lib_1_1_graph}{Graph}} \& \mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_ad20a9a3f700b05a6dd773f9b2509921e}{graph}}
+\item 
+const std\+::set$<$ \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} $>$ \& \mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_a9587fcdde3a6deac62d083a9bd6bee2e}{intermediate\+\_\+nodes}}
+\item 
+std\+::function$<$ bool(const osmium\+::\+Way \&)$>$ \mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_a7f545b229c9a2c1b405173fc1c9421a9}{include\+\_\+way}}
+\item 
+std\+::function$<$ bool(const osmium\+::\+Node\+Ref \&)$>$ \mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_adeb79afc63e819bf550a35cd373516f7}{include\+\_\+node}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Osmium handler for reading in an O\+SM file and setting up a corresponding graph 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_read_o_s_m_aef838502cbd33ab503530a04ac3ed2fd}\label{class_graph_lib_1_1_read_o_s_m_aef838502cbd33ab503530a04ac3ed2fd}} 
+\index{GraphLib::ReadOSM@{GraphLib::ReadOSM}!ReadOSM@{ReadOSM}}
+\index{ReadOSM@{ReadOSM}!GraphLib::ReadOSM@{GraphLib::ReadOSM}}
+\doxysubsubsection{\texorpdfstring{ReadOSM()}{ReadOSM()}}
+{\footnotesize\ttfamily Graph\+Lib\+::\+Read\+O\+S\+M\+::\+Read\+O\+SM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph_lib_1_1_graph}{Graph}} \&}]{graph,  }\item[{const std\+::set$<$ \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} $>$ \&}]{intermediate\+\_\+nodes,  }\item[{const std\+::function$<$ bool(const osmium\+::\+Way \&)$>$}]{include\+\_\+way,  }\item[{const std\+::function$<$ bool(const osmium\+::\+Node\+Ref \&)$>$}]{include\+\_\+node }\end{DoxyParamCaption})}
+
+Constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em graph} & The graph into which the map information is to be read (\mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_ad20a9a3f700b05a6dd773f9b2509921e}{Read\+O\+S\+M\+::graph}})\\
+\hline
+\mbox{\texttt{ in}}  & {\em intermediate\+\_\+nodes} & A set of nodes, at which ways need to be split into several edges, this set is determined with \mbox{\hyperlink{class_graph_lib_1_1_way_junctions}{Way\+Junctions}} (\mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_a9587fcdde3a6deac62d083a9bd6bee2e}{Read\+O\+S\+M\+::intermediate\+\_\+nodes}})\\
+\hline
+\mbox{\texttt{ in}}  & {\em include\+\_\+way} & Function deciding whether to take a way into consideration or to ignore it; if {\ttfamily true} is returned by the function, the way is taken into consideration (\mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_a7f545b229c9a2c1b405173fc1c9421a9}{Read\+O\+S\+M\+::include\+\_\+way}})\\
+\hline
+\mbox{\texttt{ in}}  & {\em include\+\_\+node} & Function deciding whether to take a node into consideration or to ignore it; if {\ttfamily true} is returned by the function, the node is taken into consideration (\mbox{\hyperlink{class_graph_lib_1_1_read_o_s_m_adeb79afc63e819bf550a35cd373516f7}{Read\+O\+S\+M\+::include\+\_\+node}}) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_read_o_s_m_a0ec277731dcc05f028ff3dc4610d31f4}\label{class_graph_lib_1_1_read_o_s_m_a0ec277731dcc05f028ff3dc4610d31f4}} 
+\index{GraphLib::ReadOSM@{GraphLib::ReadOSM}!way@{way}}
+\index{way@{way}!GraphLib::ReadOSM@{GraphLib::ReadOSM}}
+\doxysubsubsection{\texorpdfstring{way()}{way()}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Read\+O\+S\+M\+::way (\begin{DoxyParamCaption}\item[{const osmium\+::\+Way \&}]{way }\end{DoxyParamCaption})}
+
+Function processing a single way
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em way} & the current way \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_read_o_s_m_ad20a9a3f700b05a6dd773f9b2509921e}\label{class_graph_lib_1_1_read_o_s_m_ad20a9a3f700b05a6dd773f9b2509921e}} 
+\index{GraphLib::ReadOSM@{GraphLib::ReadOSM}!graph@{graph}}
+\index{graph@{graph}!GraphLib::ReadOSM@{GraphLib::ReadOSM}}
+\doxysubsubsection{\texorpdfstring{graph}{graph}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_graph_lib_1_1_graph}{Graph}}\& Graph\+Lib\+::\+Read\+O\+S\+M\+::graph\hspace{0.3cm}{\ttfamily [private]}}
+
+the graph into which the content of the file is read \mbox{\Hypertarget{class_graph_lib_1_1_read_o_s_m_adeb79afc63e819bf550a35cd373516f7}\label{class_graph_lib_1_1_read_o_s_m_adeb79afc63e819bf550a35cd373516f7}} 
+\index{GraphLib::ReadOSM@{GraphLib::ReadOSM}!include\_node@{include\_node}}
+\index{include\_node@{include\_node}!GraphLib::ReadOSM@{GraphLib::ReadOSM}}
+\doxysubsubsection{\texorpdfstring{include\_node}{include\_node}}
+{\footnotesize\ttfamily std\+::function$<$bool(const osmium\+::\+Node\+Ref\&)$>$ Graph\+Lib\+::\+Read\+O\+S\+M\+::include\+\_\+node\hspace{0.3cm}{\ttfamily [private]}}
+
+Function deciding whether to take a node into consideration or to ignore it (if {\ttfamily true} is returned by the function, the node is taken into consideration) \mbox{\Hypertarget{class_graph_lib_1_1_read_o_s_m_a7f545b229c9a2c1b405173fc1c9421a9}\label{class_graph_lib_1_1_read_o_s_m_a7f545b229c9a2c1b405173fc1c9421a9}} 
+\index{GraphLib::ReadOSM@{GraphLib::ReadOSM}!include\_way@{include\_way}}
+\index{include\_way@{include\_way}!GraphLib::ReadOSM@{GraphLib::ReadOSM}}
+\doxysubsubsection{\texorpdfstring{include\_way}{include\_way}}
+{\footnotesize\ttfamily std\+::function$<$bool(const osmium\+::\+Way\&)$>$ Graph\+Lib\+::\+Read\+O\+S\+M\+::include\+\_\+way\hspace{0.3cm}{\ttfamily [private]}}
+
+Function deciding whether to take a way into consideration or to ignore it (if {\ttfamily true} is returned by the function, the way is taken into consideration) \mbox{\Hypertarget{class_graph_lib_1_1_read_o_s_m_a9587fcdde3a6deac62d083a9bd6bee2e}\label{class_graph_lib_1_1_read_o_s_m_a9587fcdde3a6deac62d083a9bd6bee2e}} 
+\index{GraphLib::ReadOSM@{GraphLib::ReadOSM}!intermediate\_nodes@{intermediate\_nodes}}
+\index{intermediate\_nodes@{intermediate\_nodes}!GraphLib::ReadOSM@{GraphLib::ReadOSM}}
+\doxysubsubsection{\texorpdfstring{intermediate\_nodes}{intermediate\_nodes}}
+{\footnotesize\ttfamily const std\+::set$<$\mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}$>$\& Graph\+Lib\+::\+Read\+O\+S\+M\+::intermediate\+\_\+nodes\hspace{0.3cm}{\ttfamily [private]}}
+
+a set of nodes, at which ways need to be split into several edges (due to the presence of junctions) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/sst/code/\+Graph\+Lib/\+Graph\+Lib/include/graph\+\_\+lib/\mbox{\hyperlink{graph_8h}{graph.\+h}}\end{DoxyCompactItemize}

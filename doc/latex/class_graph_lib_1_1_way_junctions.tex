@@ -1,0 +1,112 @@
+\hypertarget{class_graph_lib_1_1_way_junctions}{}\doxysection{Graph\+Lib\+::Way\+Junctions Class Reference}
+\label{class_graph_lib_1_1_way_junctions}\index{GraphLib::WayJunctions@{GraphLib::WayJunctions}}
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+
+
+Inheritance diagram for Graph\+Lib\+::Way\+Junctions\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_graph_lib_1_1_way_junctions__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Graph\+Lib\+::Way\+Junctions\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_graph_lib_1_1_way_junctions__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph_lib_1_1_way_junctions_a54b9df3d0bca06ee0b5f5626bc892c76}{Way\+Junctions}} (const std\+::function$<$ bool(const osmium\+::\+Way \&)$>$ \mbox{\hyperlink{class_graph_lib_1_1_way_junctions_a612c2fc6cef171ec1004947225b2045e}{include\+\_\+way}})
+\item 
+void \mbox{\hyperlink{class_graph_lib_1_1_way_junctions_a948192ecc9beb95cd641afc28dba4235}{way}} (const osmium\+::\+Way \&way)
+\item 
+std\+::set$<$ \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} $>$ \mbox{\hyperlink{class_graph_lib_1_1_way_junctions_aa3a6752f0c1c8a3a1d422794739d9316}{get\+\_\+intermediate\+\_\+nodes}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}, short unsigned int $>$ \mbox{\hyperlink{class_graph_lib_1_1_way_junctions_ad67c3801e21aa9fd780bf833f8d9280c}{node\+\_\+counts}}
+\item 
+std\+::function$<$ bool(const osmium\+::\+Way \&)$>$ \mbox{\hyperlink{class_graph_lib_1_1_way_junctions_a612c2fc6cef171ec1004947225b2045e}{include\+\_\+way}}
+\item 
+bool \mbox{\hyperlink{class_graph_lib_1_1_way_junctions_a4ba2b390ceaddbbd500343639ad9aadf}{initialized}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Osmium handler for finding intermediate nodes on ways corresponding to junctions, which, therefore, become nodes in the graph 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_way_junctions_a54b9df3d0bca06ee0b5f5626bc892c76}\label{class_graph_lib_1_1_way_junctions_a54b9df3d0bca06ee0b5f5626bc892c76}} 
+\index{GraphLib::WayJunctions@{GraphLib::WayJunctions}!WayJunctions@{WayJunctions}}
+\index{WayJunctions@{WayJunctions}!GraphLib::WayJunctions@{GraphLib::WayJunctions}}
+\doxysubsubsection{\texorpdfstring{WayJunctions()}{WayJunctions()}}
+{\footnotesize\ttfamily Graph\+Lib\+::\+Way\+Junctions\+::\+Way\+Junctions (\begin{DoxyParamCaption}\item[{const std\+::function$<$ bool(const osmium\+::\+Way \&)$>$}]{include\+\_\+way }\end{DoxyParamCaption})}
+
+Constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em include\+\_\+way} & Function deciding whether to take a way into consideration or to ignore it; if {\ttfamily true} is returned by the function, the way is taken into consideration (\mbox{\hyperlink{class_graph_lib_1_1_way_junctions_a612c2fc6cef171ec1004947225b2045e}{Way\+Junctions\+::include\+\_\+way}}) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_way_junctions_aa3a6752f0c1c8a3a1d422794739d9316}\label{class_graph_lib_1_1_way_junctions_aa3a6752f0c1c8a3a1d422794739d9316}} 
+\index{GraphLib::WayJunctions@{GraphLib::WayJunctions}!get\_intermediate\_nodes@{get\_intermediate\_nodes}}
+\index{get\_intermediate\_nodes@{get\_intermediate\_nodes}!GraphLib::WayJunctions@{GraphLib::WayJunctions}}
+\doxysubsubsection{\texorpdfstring{get\_intermediate\_nodes()}{get\_intermediate\_nodes()}}
+{\footnotesize\ttfamily std\+::set$<$\mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}$>$ Graph\+Lib\+::\+Way\+Junctions\+::get\+\_\+intermediate\+\_\+nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The nodes where ways must be split. Each call to this function must be preceded by application of an osmium reader. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_lib_1_1_way_junctions_a948192ecc9beb95cd641afc28dba4235}\label{class_graph_lib_1_1_way_junctions_a948192ecc9beb95cd641afc28dba4235}} 
+\index{GraphLib::WayJunctions@{GraphLib::WayJunctions}!way@{way}}
+\index{way@{way}!GraphLib::WayJunctions@{GraphLib::WayJunctions}}
+\doxysubsubsection{\texorpdfstring{way()}{way()}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Way\+Junctions\+::way (\begin{DoxyParamCaption}\item[{const osmium\+::\+Way \&}]{way }\end{DoxyParamCaption})}
+
+Function processing a single way
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em way} & the current way \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_graph_lib_1_1_way_junctions_a612c2fc6cef171ec1004947225b2045e}\label{class_graph_lib_1_1_way_junctions_a612c2fc6cef171ec1004947225b2045e}} 
+\index{GraphLib::WayJunctions@{GraphLib::WayJunctions}!include\_way@{include\_way}}
+\index{include\_way@{include\_way}!GraphLib::WayJunctions@{GraphLib::WayJunctions}}
+\doxysubsubsection{\texorpdfstring{include\_way}{include\_way}}
+{\footnotesize\ttfamily std\+::function$<$bool(const osmium\+::\+Way\&)$>$ Graph\+Lib\+::\+Way\+Junctions\+::include\+\_\+way\hspace{0.3cm}{\ttfamily [private]}}
+
+Function deciding whether to take a way into consideration or to ignore it (if {\ttfamily true} is returned by the function, the way is taken into consideration) \mbox{\Hypertarget{class_graph_lib_1_1_way_junctions_a4ba2b390ceaddbbd500343639ad9aadf}\label{class_graph_lib_1_1_way_junctions_a4ba2b390ceaddbbd500343639ad9aadf}} 
+\index{GraphLib::WayJunctions@{GraphLib::WayJunctions}!initialized@{initialized}}
+\index{initialized@{initialized}!GraphLib::WayJunctions@{GraphLib::WayJunctions}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool Graph\+Lib\+::\+Way\+Junctions\+::initialized = false\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+bool indicating whether an O\+SM file has already been read in \mbox{\Hypertarget{class_graph_lib_1_1_way_junctions_ad67c3801e21aa9fd780bf833f8d9280c}\label{class_graph_lib_1_1_way_junctions_ad67c3801e21aa9fd780bf833f8d9280c}} 
+\index{GraphLib::WayJunctions@{GraphLib::WayJunctions}!node\_counts@{node\_counts}}
+\index{node\_counts@{node\_counts}!GraphLib::WayJunctions@{GraphLib::WayJunctions}}
+\doxysubsubsection{\texorpdfstring{node\_counts}{node\_counts}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}}, short unsigned int$>$ Graph\+Lib\+::\+Way\+Junctions\+::node\+\_\+counts\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+map between node number and number of times this node appears in the ways, used internally to determine output of \mbox{\hyperlink{class_graph_lib_1_1_way_junctions_aa3a6752f0c1c8a3a1d422794739d9316}{Way\+Junctions\+::get\+\_\+intermediate\+\_\+nodes()}} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/sst/code/\+Graph\+Lib/\+Graph\+Lib/include/graph\+\_\+lib/\mbox{\hyperlink{graph_8h}{graph.\+h}}\end{DoxyCompactItemize}
