@@ -454,6 +454,13 @@ public:
 	get_n_nodes()
 	const;
 
+	/**
+	 * @return	The number of edges involved in the graph
+	 */
+	unsigned int
+	get_n_edges()
+	const;
+
 
 };
 

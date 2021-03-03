@@ -403,8 +403,6 @@ namespace GraphLib
 								const function<bool(const osmium::NodeRef&)>& 	include_node,
 								const bool										remove_dead_ends)
 	{
-		cout << "Reading " << file_name << " ..." << endl;
-
 		// first find out, which ways need to be split into several edges
 		osmium::io::Reader osm_reader_1{file_name.c_str(), osmium::osm_entity_bits::way};
 		WayJunctions way_junctions(include_way);
@@ -488,9 +486,6 @@ namespace GraphLib
 			if(continue_loop == false)
 				break;
 		}
-
-		cout << " Generated " << nodes.size() << " nodes and " << edges.size() << " edges." << endl;
-
 		return;
 	}
 
@@ -625,5 +620,11 @@ namespace GraphLib
 		return nodes.size();
 	}
 
+	unsigned int
+	Graph::get_n_edges()
+	const
+	{
+		return edges.size();
+	}
 
 }
