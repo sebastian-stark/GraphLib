@@ -582,8 +582,11 @@ namespace GraphLib
 	{
 		output_stream << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 		output_stream << "<gpx version=\"1.0\">\n";
+		output_stream << "<name>" << track_name << "</name>\n";
 		output_stream << "<trk>\n";
 		output_stream << "<name>" << track_name << "</name>\n";
+		output_stream << "<number>1</number>\n";
+		output_stream << "<trkseg>\n";
 		for(const auto& edge : route)
 		{
 			if(edge.second == Direction::forward)
@@ -609,6 +612,7 @@ namespace GraphLib
 				}
 			}
 		}
+		output_stream << "</trkseg>\n";
 		output_stream << "</trk>\n";
 		output_stream << "</gpx>\n";
 	}

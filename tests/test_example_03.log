@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.0">
+<name>test_track</name>
 <trk>
 <name>test_track</name>
+<number>1</number>
+<trkseg>
 <trkpt lat="51.0721" lon="13.7515"></trkpt>
 <trkpt lat="51.0721" lon="13.7516"></trkpt>
 <trkpt lat="51.0719" lon="13.7521"></trkpt>
@@ -329,5 +332,6 @@
 <trkpt lat="51.0533" lon="13.7964"></trkpt>
 <trkpt lat="51.0532" lon="13.797"></trkpt>
 <trkpt lat="51.0531" lon="13.7977"></trkpt>
+</trkseg>
 </trk>
 </gpx>
