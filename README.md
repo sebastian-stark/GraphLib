@@ -16,4 +16,4 @@ The library GraphLib requires libosmium >=2.15.4 and ZLIB >=1.2.11 installed in 
 
 The doxygen generated documentation of GraphLib can be found in the doc folder.
 
-For examples for usage of GraphLib, see the /tests folder.
+For an example for the usage of GraphLib, see the repository https://github.com/sebastian-stark/PandemicCircles.git. Further examples can be found in the /tests folder.
