@@ -25,17 +25,24 @@
 using namespace std;
 using namespace GraphLib;
 
+/**
+ * Test extracting way data from an *.osm.pbf file and converting these data into a graph.
+ * Data within a circle of radius r=1 km around a center point with latitude 51.05871° and longitude 13.77054° are taken into account.
+ */
 int main(int argc, char *argv[])
 {
 
+	// initialize logging
 	initlog(argc, argv);
 
-	const double lat = 51.05871;
-	const double lon = 13.77054;
-	const double r = 1.0;
-	const string file = "example_map.osm.pbf";
+	// input parameters
+	const double lat = 51.05871;				// latitude of center point
+	const double lon = 13.77054;				// longitude of center point
+	const double r = 1.0;						// radius of circle within which data is extracted (km)
+	const string file = "example_map.osm.pbf";	// input file
+	const double r_earth = 6371.0;				// mean radius of earth (km)
 
-	const double r_earth = 6371.0;
+	// metric for computation of distances between two points (given in latitude, longitude)
 	const auto standard_metric = [&](const coordinate_t& p_1, const coordinate_t& p_2) -> double
 	{
 		const double delta_lat = (p_1.first - p_2.first) * M_PI / 180.0;
@@ -47,8 +54,11 @@ int main(int argc, char *argv[])
 		return r_earth * c;
 	};
 
-	const map<string, set<string>> exclude_tags = { {"bicycle", {"no", "dismount"}}, {"area", {"yes"}}, {"access", {"no", "private"}}};
+	// function determining which ways to include into the graph
+	// (if a way is tagged with any of the tag/key combinations contained in include_tags, it is included into the considerations,
+	//  unless the way also involves a tag/key combination contained in exclude_tags)
 	const map<string, set<string>> include_tags = { {"highway", {"residential", "trunk", "primary", "secondary", "tertiary", "unclassified", "trunk_link", "primary_link", "secondary_link", "tertiary_link", "living_street", "road"}} };
+	const map<string, set<string>> exclude_tags = { {"bicycle", {"no", "dismount"}}, {"area", {"yes"}}, {"access", {"no", "private"}}};
 	const auto include_way = [&](const osmium::Way& way) -> bool
 	{
 		bool include = false;
@@ -64,6 +74,7 @@ int main(int argc, char *argv[])
 		return include;
 	};
 
+	// function determining which nodes to include into the graph (here: only those which are less than 1 km away from the center point)
 	const auto include_node = [&](const osmium::NodeRef& node) -> bool
 	{
 		const double delta_lat = (node.lat() - lat) * M_PI / 180.0;
@@ -79,10 +90,13 @@ int main(int argc, char *argv[])
 			return false;
 	};
 
+	// set up graph
 	Graph graph(standard_metric);
 
+	// read in file
 	graph.read_graph_from_osm(file, include_way, include_node, false);
 
+	// print some information about the graph
 	graph_lib_log << graph.get_n_edges() << endl;
 	graph_lib_log << graph.get_n_nodes() << endl << endl;
 	const auto direction_to_string = [&](const Direction& direction) -> string
@@ -99,5 +113,6 @@ int main(int argc, char *argv[])
 	for(const auto& edge : graph)
 		graph_lib_log << edge.get_node_1() << " " << edge.get_node_2() << " " << direction_to_string(edge.get_direction()) << " " << edge.get_length(standard_metric) << endl;
 
+	// stop logging
 	return stoplog(argc, argv);
 }

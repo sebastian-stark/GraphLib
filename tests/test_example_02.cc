@@ -25,10 +25,15 @@
 using namespace std;
 using namespace GraphLib;
 
+/**
+ * Test setting up a graph by hand and computing a shortest path
+ */
 int main(int argc, char *argv[])
 {
+	// initialize logging
 	initlog(argc, argv);
 
+	// define a metric
 	const auto metric = [&](const coordinate_t& p_1, const coordinate_t& p_2) -> double
 	{
 		const double dx = p_1.first - p_2.first;
@@ -36,8 +41,10 @@ int main(int argc, char *argv[])
 		return sqrt(dx * dx + dy * dy);
 	};
 
+	// set up graph
 	Graph graph(metric);
 
+	// add some edges
 	graph.add_edge(1, 0, {{1.0, 2.0},{0.0, 1.0}}, Direction::both);
 	graph.add_edge(0, 7, {{0.0, 1.0},{1.0, 0.0}}, Direction::both);
 	graph.add_edge(1, 7, {{1.0, 2.0},{1.0, 0.0}}, Direction::both);
@@ -53,8 +60,10 @@ int main(int argc, char *argv[])
 	graph.add_edge(3, 4, {{3.0, 2.0},{4.0, 1.0}}, Direction::both);
 	graph.add_edge(5, 4, {{3.0, 0.0},{4.0, 1.0}}, Direction::backward);
 
+	// compute the shortest path between nodes 0 and 4
 	auto shortest_path = graph.compute_shortest_path(0, 4);
 
+	// write some information about the shortest path into log file
 	double distance = 0.0;
 	for(auto e : shortest_path)
 	{
@@ -66,5 +75,6 @@ int main(int argc, char *argv[])
 	}
 	graph_lib_log << endl << "Total distance = " << distance << endl;
 
+	// stop logging
 	return stoplog(argc, argv);
 }
