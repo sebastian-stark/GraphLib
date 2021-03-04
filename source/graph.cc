@@ -574,12 +574,63 @@ namespace GraphLib
 
 	}
 
-	Node
-	Graph::get_closest_node(const coordinate_t		p,
-							const std::set<Node> 	nodes_ignore)
+	void
+	Graph::write_gpx(	ofstream& 									output_stream,
+						const list<pair<const Edge*, Direction>>&	route,
+						const string								track_name)
 	const
 	{
-		double min_dist = std::numeric_limits<double>::max();
+		output_stream << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+		output_stream << "<gpx version=\"1.0\">\n";
+		output_stream << "<trk>\n";
+		output_stream << "<name>" << track_name << "</name>\n";
+		for(const auto& edge : route)
+		{
+			if(edge.second == Direction::forward)
+			{
+				auto coord_it = edge.first->coordinates.begin();
+				for(;;)
+				{
+					output_stream << "<trkpt lat=\"" << coord_it->first << "\" lon=\"" << coord_it->second << "\"></trkpt>\n";
+					++coord_it;
+					if(coord_it == edge.first->coordinates.end())
+						break;
+				}
+			}
+			else
+			{
+				auto coord_it = (--edge.first->coordinates.end());
+				for(;;)
+				{
+					output_stream << "<trkpt lat=\"" << coord_it->first << "\" lon=\"" << coord_it->second << "\"></trkpt>\n";
+					if(coord_it == edge.first->coordinates.begin())
+						break;
+					--coord_it;
+				}
+			}
+		}
+		output_stream << "</trk>\n";
+		output_stream << "</gpx>\n";
+	}
+
+	void
+	Graph::write_gpx(	const string 								file_name,
+						const list<pair<const Edge*, Direction>>&	route,
+						const string								track_name)
+	const
+	{
+		ofstream gpx_file;
+		gpx_file.open(file_name.c_str());
+		write_gpx(gpx_file, route, track_name);
+		gpx_file.close();
+	}
+
+	Node
+	Graph::get_closest_node(const coordinate_t	p,
+							const set<Node> 	nodes_ignore)
+	const
+	{
+		double min_dist = numeric_limits<double>::max();
 		Node min_node;
 		for(const auto& edge : edges)
 		{

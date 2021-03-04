@@ -409,7 +409,7 @@ public:
 	/**
 	 * Write the graph in svg format to the specified stream
 	 *
-	 * @param[in]	output_stream			The stream to which the svg data is written
+	 * @param[in]	output_stream			The stream to which the svg data are written
 	 *
 	 * @param[in]	coordinate_transform	A transformation applied to the coordinates defining the geometry of the graph edges before writing the svg.
 	 * 										If e.g. the coordinates of the graph edges represent longitude and latitude, this defines the projection to planar coordinates.
@@ -461,6 +461,42 @@ public:
 	std::list<std::pair<const Edge*, Direction>>
 	compute_shortest_path(	const Node node_1,
 							const Node node_2)
+	const;
+
+	/**
+	 * Write a route (e.g. computed with Graph::compute_shortest_path) in gpx format to the specified stream.
+	 *
+	 * @param[in]	output_stream	The stream to which the svg data are written
+	 *
+	 * @param[in]	route			The route described in terms of a list of pairs of edges and directions.
+	 * 								The list is ordered by the order of traversal of the edges when following the route;
+	 * 								and Direction::forward indicates that an edge is traversed from node 1 to node 2,
+	 * 								while Direction::backward indicates than an edge is traversed from node 2 to node 1.
+	 *
+	 * @param[in]	track_name		A name for the track
+	 */
+	void
+	write_gpx(	std::ofstream& 										output_stream,
+				const std::list<std::pair<const Edge*, Direction>>&	route,
+				const std::string									track_name = "track")
+	const;
+
+	/**
+	 * Write a route (e.g. computed with Graph::compute_shortest_path) into a gpx file.
+	 *
+	 * @param[in]	file_name		The file name of the gpx file (including the extension)
+	 *
+	 * @param[in]	route			The route described in terms of a list of pairs of edges and directions.
+	 * 								The list is ordered by the order of traversal of the edges when following the route;
+	 * 								and Direction::forward indicates that an edge is traversed from node 1 to node 2,
+	 * 								while Direction::backward indicates than an edge is traversed from node 2 to node 1.
+	 *
+	 * @param[in]	track_name		A name for the track
+	 */
+	void
+	write_gpx(	const std::string 									file_name,
+				const std::list<std::pair<const Edge*, Direction>>&	route,
+				const std::string									track_name = "track")
 	const;
 
 	/**

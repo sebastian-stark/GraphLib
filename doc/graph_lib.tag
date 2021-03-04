@@ -263,6 +263,20 @@
       <arglist>(const Node node_1, const Node node_2) const</arglist>
     </member>
     <member kind="function">
+      <type>void</type>
+      <name>write_gpx</name>
+      <anchorfile>class_graph_lib_1_1_graph.html</anchorfile>
+      <anchor>a7ca36a4abe72aa619f2b224027db9ffc</anchor>
+      <arglist>(std::ofstream &amp;output_stream, const std::list&lt; std::pair&lt; const Edge *, Direction &gt;&gt; &amp;route, const std::string track_name=&quot;track&quot;) const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>write_gpx</name>
+      <anchorfile>class_graph_lib_1_1_graph.html</anchorfile>
+      <anchor>ac317639c13dd2e9c9a1f4e402ac5a28e</anchor>
+      <arglist>(const std::string file_name, const std::list&lt; std::pair&lt; const Edge *, Direction &gt;&gt; &amp;route, const std::string track_name=&quot;track&quot;) const</arglist>
+    </member>
+    <member kind="function">
       <type>Node</type>
       <name>get_closest_node</name>
       <anchorfile>class_graph_lib_1_1_graph.html</anchorfile>

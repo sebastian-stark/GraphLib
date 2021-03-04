@@ -19,6 +19,7 @@ void initlog(int argc, char *argv[])
  */
 int stoplog(int argc, char *argv[])
 {
+	graph_lib_log.close();
 	const std::string log_file_name = std::string(argv[0]) + "_.log";
 	const std::string comparison_log_file_name = std::string(argv[0]) + ".log";
 	std::ifstream log_file(log_file_name.c_str());

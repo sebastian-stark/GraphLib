@@ -27,6 +27,10 @@ void \mbox{\hyperlink{class_graph_lib_1_1_graph_accc2fe03dcb9ad88dd5dbee1d8fb17c
 \item 
 std\+::list$<$ std\+::pair$<$ const \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}} $\ast$, \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} $>$ $>$ \mbox{\hyperlink{class_graph_lib_1_1_graph_accf1e69b32cd4644bc7291337be9d8a6}{compute\+\_\+shortest\+\_\+path}} (const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} node\+\_\+1, const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} node\+\_\+2) const
 \item 
+void \mbox{\hyperlink{class_graph_lib_1_1_graph_a7ca36a4abe72aa619f2b224027db9ffc}{write\+\_\+gpx}} (std\+::ofstream \&output\+\_\+stream, const std\+::list$<$ std\+::pair$<$ const \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}} $\ast$, \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} $>$$>$ \&route, const std\+::string track\+\_\+name=\char`\"{}track\char`\"{}) const
+\item 
+void \mbox{\hyperlink{class_graph_lib_1_1_graph_ac317639c13dd2e9c9a1f4e402ac5a28e}{write\+\_\+gpx}} (const std\+::string file\+\_\+name, const std\+::list$<$ std\+::pair$<$ const \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}} $\ast$, \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} $>$$>$ \&route, const std\+::string track\+\_\+name=\char`\"{}track\char`\"{}) const
+\item 
 \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} \mbox{\hyperlink{class_graph_lib_1_1_graph_a648d1bfbd8a9c70b41be6c4bf846ad6a}{get\+\_\+closest\+\_\+node}} (const \mbox{\hyperlink{namespace_graph_lib_aedce1a218e8997c889ed4a2e30ba23a9}{coordinate\+\_\+t}} p, const std\+::set$<$ \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} $>$ nodes\+\_\+ignore=std\+::set$<$ \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} $>$()) const
 \item 
 unsigned int \mbox{\hyperlink{class_graph_lib_1_1_graph_a635d70d0608d1f1293758db509707832}{get\+\_\+degree}} (const \mbox{\hyperlink{namespace_graph_lib_a93d9cfaf86aae4dac4542492e675fec8}{Node}} node) const
@@ -220,6 +224,40 @@ Change the metric of the graph
 \mbox{\texttt{ in}}  & {\em metric} & The new metric function \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_ac317639c13dd2e9c9a1f4e402ac5a28e}\label{class_graph_lib_1_1_graph_ac317639c13dd2e9c9a1f4e402ac5a28e}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!write\_gpx@{write\_gpx}}
+\index{write\_gpx@{write\_gpx}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{write\_gpx()}{write\_gpx()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Graph\+::write\+\_\+gpx (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+\_\+name,  }\item[{const std\+::list$<$ std\+::pair$<$ const \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}} $\ast$, \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} $>$$>$ \&}]{route,  }\item[{const std\+::string}]{track\+\_\+name = {\ttfamily \char`\"{}track\char`\"{}} }\end{DoxyParamCaption}) const}
+
+Write a route (e.\+g. computed with \mbox{\hyperlink{class_graph_lib_1_1_graph_accf1e69b32cd4644bc7291337be9d8a6}{Graph\+::compute\+\_\+shortest\+\_\+path}}) into a gpx file.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em file\+\_\+name} & The file name of the gpx file (including the extension)\\
+\hline
+\mbox{\texttt{ in}}  & {\em route} & The route described in terms of a list of pairs of edges and directions. The list is ordered by the order of traversal of the edges when following the route; and Direction\+::forward indicates that an edge is traversed from node 1 to node 2, while Direction\+::backward indicates than an edge is traversed from node 2 to node 1.\\
+\hline
+\mbox{\texttt{ in}}  & {\em track\+\_\+name} & A name for the track \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_lib_1_1_graph_a7ca36a4abe72aa619f2b224027db9ffc}\label{class_graph_lib_1_1_graph_a7ca36a4abe72aa619f2b224027db9ffc}} 
+\index{GraphLib::Graph@{GraphLib::Graph}!write\_gpx@{write\_gpx}}
+\index{write\_gpx@{write\_gpx}!GraphLib::Graph@{GraphLib::Graph}}
+\doxysubsubsection{\texorpdfstring{write\_gpx()}{write\_gpx()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Graph\+Lib\+::\+Graph\+::write\+\_\+gpx (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{output\+\_\+stream,  }\item[{const std\+::list$<$ std\+::pair$<$ const \mbox{\hyperlink{class_graph_lib_1_1_edge}{Edge}} $\ast$, \mbox{\hyperlink{namespace_graph_lib_a5bf5516c3b23da8f7af1226afab50a5a}{Direction}} $>$$>$ \&}]{route,  }\item[{const std\+::string}]{track\+\_\+name = {\ttfamily \char`\"{}track\char`\"{}} }\end{DoxyParamCaption}) const}
+
+Write a route (e.\+g. computed with \mbox{\hyperlink{class_graph_lib_1_1_graph_accf1e69b32cd4644bc7291337be9d8a6}{Graph\+::compute\+\_\+shortest\+\_\+path}}) in gpx format to the specified stream.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em output\+\_\+stream} & The stream to which the svg data are written\\
+\hline
+\mbox{\texttt{ in}}  & {\em route} & The route described in terms of a list of pairs of edges and directions. The list is ordered by the order of traversal of the edges when following the route; and Direction\+::forward indicates that an edge is traversed from node 1 to node 2, while Direction\+::backward indicates than an edge is traversed from node 2 to node 1.\\
+\hline
+\mbox{\texttt{ in}}  & {\em track\+\_\+name} & A name for the track \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_graph_lib_1_1_graph_af10505c386680bdb79efa0dc5b0f7f5d}\label{class_graph_lib_1_1_graph_af10505c386680bdb79efa0dc5b0f7f5d}} 
 \index{GraphLib::Graph@{GraphLib::Graph}!write\_svg@{write\_svg}}
 \index{write\_svg@{write\_svg}!GraphLib::Graph@{GraphLib::Graph}}
@@ -249,7 +287,7 @@ Write the graph in svg format to the specified stream
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em output\+\_\+stream} & The stream to which the svg data is written\\
+\mbox{\texttt{ in}}  & {\em output\+\_\+stream} & The stream to which the svg data are written\\
 \hline
 \mbox{\texttt{ in}}  & {\em coordinate\+\_\+transform} & A transformation applied to the coordinates defining the geometry of the graph edges before writing the svg. If e.\+g. the coordinates of the graph edges represent longitude and latitude, this defines the projection to planar coordinates.\\
 \hline
