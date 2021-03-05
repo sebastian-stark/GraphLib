@@ -369,8 +369,8 @@ namespace GraphLib
 			res += tag_close + ">";
 			return res;
 		};
-
-		output_stream << prop_str( "svg", { {"width", to_string(width) + "px"}, {"height", to_string(height) + "px"} }) << endl;
+		output_stream << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << endl;
+		output_stream << prop_str( "svg", { {"width", to_string(width) + "px"}, {"height", to_string(height) + "px"}, {"xmlns", "http://www.w3.org/2000/svg"} }) << endl;
 		output_stream << prop_str( "rect", { {"x", "0"}, {"y", "0"}, {"width", to_string(width)}, {"height", to_string(height)}, {"fill", "white"} }, "/") << endl;
 		string postponed_edges = "";
 		for(const auto& edge : edges)
